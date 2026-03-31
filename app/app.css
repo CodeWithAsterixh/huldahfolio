@@ -1,15 +1,46 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
-html,
-body {
-  @apply bg-white dark:bg-gray-950;
+@layer base {
+  html {
+    background-color: #050505;
+    color: #f0f0f0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+  }
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
+  body {
+    @apply font-sans;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .link-underline {
+    @apply relative no-underline;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute w-full h-[1px] bottom-[-2px] left-0 bg-current transition-transform duration-500;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+  }
+
+  .link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 }
