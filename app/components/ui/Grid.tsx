@@ -18,5 +18,5 @@ export function Grid({ children, columns = 3, className = "" }: Readonly<GridPro
 }
 
 export function Stack({ children, gap = 4, className = "" }: Readonly<{ children: React.ReactNode; gap?: number; className?: string }>) {
-  return <div className={`flex flex-col gap-${gap} ${className}`}>{children}</div>;
+  return <div className={`flex flex-col gap-${gap} ${className} h-full`}>{children}</div>;
 }

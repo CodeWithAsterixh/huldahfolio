@@ -30,25 +30,26 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled || isMenuOpen ? "bg-[#050505]/90 backdrop-blur-xl border-b border-white/10" : "bg-transparent py-4"
+      className={`max-w-6xl mx-auto px-6 md:px-12 fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled || isMenuOpen ? "bg-[#050505]/90 backdrop-blur-xl border-b border-white/10" : "bg-transparent py-4"
         }`}
     >
       <PageContainer>
         <div className="py-4 flex justify-between items-center relative">
-          <Link to="/" className="text-2xl font-serif tracking-tighter z-50">Huldah</Link>
+          <Link to="/" data-cursor="pointer" className="text-2xl font-serif tracking-tighter z-50">Huldah</Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex gap-12 text-[10px] font-sans text-white/50 uppercase tracking-[0.25em] font-bold">
-            <Link to="/#about" className="hover:text-white transition-colors link-underline">About</Link>
-            <Link to="/#projects" className="hover:text-white transition-colors link-underline">Projects</Link>
-            <Link to="/#skills" className="hover:text-white transition-colors link-underline">Expertise</Link>
-            <Link to="/contact" className="hover:text-white transition-colors text-white link-underline">Contact</Link>
+            <Link to="/#about" data-cursor="pointer" className="hover:text-white transition-colors link-underline">About</Link>
+            <Link to="/#projects" data-cursor="pointer" className="hover:text-white transition-colors link-underline">Projects</Link>
+            <Link to="/#skills" data-cursor="pointer" className="hover:text-white transition-colors link-underline">Expertise</Link>
+            <Link to="/contact" data-cursor="pointer" className="hover:text-white transition-colors text-white link-underline">Contact</Link>
           </nav>
 
           {/* Hamburger Menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden z-50 flex flex-col gap-1.5 p-2"
+            data-cursor={isMenuOpen ? "close" : "menu"}
             aria-label="Toggle Navigation"
           >
             <span className={`w-6 h-[1.5px] bg-white transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
@@ -79,6 +80,7 @@ export function Header() {
                 to={item === "Contact" ? "/contact" : `/#${item.toLowerCase()}`}
                 className={`text-5xl md:text-7xl font-serif text-white hover:text-white/60 transition-all duration-500 transform ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
                   }`}
+                data-cursor="pointer"
                 style={{ transitionDelay: `${idx * 100}ms` }}
                 onClick={() => setIsMenuOpen(false)}
               >

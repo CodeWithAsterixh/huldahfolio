@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { Link } from "react-router";
-import { Section } from "../layout/Section";
-import { Heading, Text } from "../ui/Typography";
-import { Stack } from "../ui/Grid";
 import { useScrollProgress } from "../../hooks/useScrollProgress";
+import { Section } from "../layout/Section";
+import { Stack } from "../ui/Grid";
+import { Heading, Text } from "../ui/Typography";
 
 export function HomeHero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -16,13 +16,6 @@ export function HomeHero() {
 
   return (
     <Section id="about" className="relative overflow-hidden">
-      {/* Background Watermark */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 select-none pointer-events-none opacity-[0.03] whitespace-nowrap">
-        <span className="text-[120vw] md:text-[60vw] font-serif font-black leading-none uppercase tracking-tighter bg-gradient-to-b from-white to-transparent bg-clip-text text-transparent">
-          Create
-        </span>
-      </div>
-
       <div className="flex flex-col gap-12 pt-8 relative z-10">
         <div
           ref={heroRef}
@@ -52,7 +45,7 @@ export function HomeHero() {
               className="w-full h-full object-cover"
             />
           </div>
-          <Stack gap={6} className="pt-2">
+          <Stack gap={6} className="pt-2 flex justify-center flex-col">
             <div
               data-scroll-animation="dynamic_toggle"
               data-scroll-variables="{enterClass: 'opacity-100 translate-y-0', leaveClass: 'opacity-0 translate-y-8', threshold: 0.1}"
@@ -70,6 +63,7 @@ export function HomeHero() {
                 data-scroll-animation="dynamic_toggle"
                 data-scroll-variables="{enterClass: 'opacity-100 translate-y-0', leaveClass: 'opacity-0 translate-y-4', threshold: 0.1}"
                 className="px-8 py-4 bg-white text-black font-sans uppercase font-bold text-xs tracking-widest hover:bg-white/90 transition-all duration-700 rounded-full inline-block"
+                data-cursor="pointer"
               >
                 Start a Project
               </Link>

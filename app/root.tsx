@@ -13,16 +13,15 @@ import "./app.css";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap",
-  },
+  { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+  { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" },
+  { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+  { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
+  { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
+  { rel: "manifest", href: "/site.webmanifest" },
 ];
+
+import { GlobalCursors } from "./components/ui/GlobalCursors";
 
 export function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
@@ -30,11 +29,34 @@ export function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#050505" />
+        <meta property="og:site_name" content="Huldah Peter" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@huldah_1" />
         <Meta />
         <Links />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Huldah Peter",
+              "url": "https://huldahpeter.com", // Fallback URL
+              "jobTitle": "Videographer & Video Editor",
+              "description": "Professional videographer and video editor based in Lagos, specialized in cinematic dance videos, commercials, and music videos.",
+              "sameAs": [
+                "https://www.instagram.com/huldah_1",
+                "https://www.linkedin.com/in/huldahpeter"
+              ]
+            })
+          }}
+        />
       </head>
       <body>
         {children}
+        <GlobalCursors />
         <ScrollRestoration />
         <Scripts />
       </body>

@@ -1,11 +1,11 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { Link } from "react-router";
-import { Section } from "../layout/Section";
-import { Grid, Stack } from "../ui/Grid";
-import { Heading, Text } from "../ui/Typography";
-import { Tag } from "../ui/Tag";
 import { projects } from "../../data/portfolio";
 import { useScrollProgress } from "../../hooks/useScrollProgress";
+import { Section } from "../layout/Section";
+import { Grid, Stack } from "../ui/Grid";
+import { Tag } from "../ui/Tag";
+import { Heading, Text } from "../ui/Typography";
 
 function ProjectCard({ project, index }: Readonly<{ project: typeof projects[0], index: number }>) {
   const cardRef = useRef<HTMLAnchorElement>(null);
@@ -17,10 +17,11 @@ function ProjectCard({ project, index }: Readonly<{ project: typeof projects[0],
       ref={cardRef}
       data-scroll-animation="dynamic_toggle"
       data-scroll-variables="{type: 'scrolling'}"
+      data-cursor="view"
       className="group block relative overflow-hidden will-change-transform"
       style={{
-        opacity: progress * 1.5,
-        transform: `translateY(${(1 - progress) * 40}px) scale(${0.98 + progress * 0.02})`,
+        opacity: progress * 3,
+        transform: `translateY(${(1 - progress) * 50}px) scale(${0.98 + progress * 0.02})`,
       }}
     >
       <Stack gap={6}>
@@ -47,7 +48,7 @@ function ProjectCard({ project, index }: Readonly<{ project: typeof projects[0],
 
 export function HomeProjects() {
   return (
-    <Section id="projects" title="Selected Work">
+    <Section id="projects" title="Selected Work" className="overflow-hidden!">
       <Grid columns={1} className="md:grid-cols-2 lg:grid-cols-2 gap-12 pt-8">
         {projects.map((project, idx) => (
           <ProjectCard key={project.id} project={project} index={idx} />

@@ -10,7 +10,7 @@ interface SectionProps {
 
 export function Section({ children, id, title, className = "" }: Readonly<SectionProps>) {
   return (
-    <section id={id} className={`py-16 md:py-24 border-t border-white/10 w-full ${className}`}>
+    <section id={id} className={`max-w-6xl mx-auto px-6 md:px-12 py-16 md:py-24 border-t border-white/10 w-full ${className} relative`}>
       {title && (
         <div className="flex items-center gap-4 mb-12">
           <div className="w-16 h-[1px] bg-white/20" />
@@ -23,5 +23,5 @@ export function Section({ children, id, title, className = "" }: Readonly<Sectio
 }
 
 export function PageContainer({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <div className="max-w-6xl mx-auto px-6 md:px-12">{children}</div>;
+  return <div className="w-full">{children}</div>;
 }

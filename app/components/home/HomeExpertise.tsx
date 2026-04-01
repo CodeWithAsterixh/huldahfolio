@@ -16,9 +16,10 @@ function ExpertiseItem({ category, idx }: Readonly<{ category: typeof skillCateg
       data-scroll-variables="{type: 'scrolling'}"
       key={category.title}
       className="flex flex-col md:flex-row gap-8 py-12 relative overflow-hidden will-change-transform border-t border-white/5 first:border-t-0"
+      data-cursor="pointer"
       style={{
-        opacity: progress * 1.5,
-        transform: `translateY(${(1 - progress) * 20}px)`
+        opacity: progress * 3,
+        transform: `translateY(${(1 - progress) * 50}px)`
       }}
     >
       <div className="w-full md:w-1/3">
@@ -61,7 +62,7 @@ function ExpertiseItem({ category, idx }: Readonly<{ category: typeof skillCateg
 
 export function HomeExpertise() {
   return (
-    <Section id="skills" title="Expertise">
+    <Section id="skills" title="Expertise" className="bg-background">
       <div className="flex flex-col">
         {skillCategories.map((category, idx) => (
           <ExpertiseItem key={category.title} category={category} idx={idx} />

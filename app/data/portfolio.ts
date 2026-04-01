@@ -123,9 +123,9 @@ export const skillCategories: SkillCategory[] = [
 ];
 
 export const contactInfo = {
-  email: "peterhuldah@gmail.com",
+  email: "huldahsweetie@gmail.com",
   socials: [
-    { label: "LinkedIn", href: "#" },
-    { label: "Instagram", href: "#" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/huldahpeter" },
+    { label: "Instagram", href: "https://www.instagram.com/huldah_1?igsh=MXV1cGFybXV6MnJ3dg==" },
   ],
 };

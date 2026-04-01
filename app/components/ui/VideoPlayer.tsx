@@ -24,7 +24,7 @@ export function VideoPlayer({ url, thumbnail }: Readonly<VideoPlayerProps>) {
   const embedUrl = getEmbedUrl();
 
   return (
-    <div className="relative w-full aspect-video rounded-3xl overflow-hidden bg-white/5 border border-white/10 group">
+    <div data-cursor="play" className="relative w-full aspect-video rounded-3xl overflow-hidden bg-white/5 border border-white/10 group">
       {embedUrl ? (
         <iframe
           src={embedUrl}
