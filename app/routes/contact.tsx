@@ -11,13 +11,22 @@ import { sendMail } from "../utils/sendMail";
 import type { Route } from "./+types/contact";
 
 export function meta({}: Route.MetaArgs) {
+  const baseUrl = "https://huldahfolio.vercel.app"; // Production URL
+  const title = "Start a Project | Contact Huldah Peter";
+  const description = "Inquire about videography, high-end editing, or social media management services. Let's bring your vision to life.";
+  const ogImage = `${baseUrl}/og-contact.png`;
+
   return [
-    { title: "Start a Project | Contact Huldah Peter" },
-    { name: "description", content: "Inquire about videography, high-end editing, or social media management services. Let's bring your vision to life." },
-    { property: "og:title", content: "Start a Project | Contact Huldah Peter" },
-    { property: "og:description", content: "Inquire about videography, high-end editing, or social media management services." },
-    { property: "og:image", content: "/og-contact.png" },
-    { name: "twitter:image", content: "/og-contact.png" },
+    { title },
+    { name: "description", content: description },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:image", content: ogImage },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
+    { property: "og:image:type", content: "image/png" },
+    { property: "og:url", content: `${baseUrl}/contact` },
+    { name: "twitter:image", content: ogImage },
   ];
 }
 

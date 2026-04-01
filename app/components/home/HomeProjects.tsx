@@ -28,7 +28,7 @@ function ProjectCard({ project, index }: Readonly<{ project: typeof projects[0],
         <div className="aspect-video rounded-3xl overflow-hidden bg-black/20 border border-white/10 group-hover:border-white/20 transition-all duration-700">
           <img
             src={project.thumbnail}
-            alt={project.title}
+            alt={`${project.title} - ${project.category} Video Case Study by Huldah Peter`}
             className="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000"
           />
         </div>

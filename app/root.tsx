@@ -42,7 +42,7 @@ export function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Huldah Peter",
-              "url": "https://huldahpeter.com", // Fallback URL
+              "url": "https://huldahfolio.vercel.app", // Production URL
               "jobTitle": "Videographer & Video Editor",
               "description": "Professional videographer and video editor based in Lagos, specialized in cinematic dance videos, commercials, and music videos.",
               "sameAs": [

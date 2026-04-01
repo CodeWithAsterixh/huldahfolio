@@ -40,8 +40,8 @@ export function HomeHero() {
             className="aspect-[4/3] rounded-3xl overflow-hidden bg-black/20 border border-white/10 transition-all duration-1000"
           >
             <img
-              src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=1200"
-              alt="Creative Work"
+              src="/me-image.jpeg"
+              alt="Huldah Peter - Professional Videographer and Video Editor in Lagos"
               className="w-full h-full object-cover"
             />
           </div>

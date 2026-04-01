@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://huldahpeter.com/sitemap.xml
+Sitemap: https://huldahfolio.vercel.app/sitemap.xml

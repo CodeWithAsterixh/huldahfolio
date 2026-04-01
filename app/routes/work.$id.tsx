@@ -12,10 +12,11 @@ import { useScrollProgress } from "../hooks/useScrollProgress";
 import type { Route } from "./+types/work.$id";
 
 export function meta({ params }: Route.MetaArgs) {
+  const baseUrl = "https://huldahfolio.vercel.app"; // Production URL
   const project = projects.find((p) => p.id === params.id);
   const title = `${project?.title || "Project"} | Huldah Peter Case Study`;
   const description = project?.description || "Explore this professional videography case study by Huldah Peter.";
-  const ogImage = `/og-${params.id}.png`;
+  const ogImage = `${baseUrl}/og-${params.id}.png`;
 
   return [
     { title },
@@ -23,6 +24,11 @@ export function meta({ params }: Route.MetaArgs) {
     { property: "og:title", content: title },
     { property: "og:description", content: description },
     { property: "og:image", content: ogImage },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
+    { property: "og:image:type", content: "image/png" },
+    { property: "og:image:alt", content: `${title} - Videography Case Study` },
+    { property: "og:url", content: `${baseUrl}/work/${params.id}` },
     { property: "og:type", content: "video.other" },
     { name: "twitter:title", content: title },
     { name: "twitter:description", content: description },

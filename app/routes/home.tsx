@@ -8,15 +8,25 @@ import { PageContainer } from "../components/layout/Section";
 import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {
+  const baseUrl = "https://huldahfolio.vercel.app"; // Production URL
+  const title = "Huldah Peter | Videographer & Video Editor";
+  const description = "Professional Videographer and Video Editor in Lagos. Specializing in cinematic dance, commercials, and high-impact social media content.";
+  const ogImage = `${baseUrl}/og-home.png`;
+
   return [
-    { title: "Huldah Peter | Videographer & Video Editor" },
-    { name: "description", content: "Professional Videographer and Video Editor in Lagos. Specializing in cinematic dance, commercials, and high-impact social media content." },
-    { property: "og:title", content: "Huldah Peter | Videographer & Video Editor" },
-    { property: "og:description", content: "Explore the creative portfolio of Huldah Peter. Premium videography and editing for brands, artists, and creators." },
-    { property: "og:image", content: "/og-home.png" },
-    { name: "twitter:title", content: "Huldah Peter | Videographer & Video Editor" },
-    { name: "twitter:description", content: "Explore the creative portfolio of Huldah Peter." },
-    { name: "twitter:image", content: "/og-home.png" },
+    { title },
+    { name: "description", content: description },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:image", content: ogImage },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
+    { property: "og:image:type", content: "image/png" },
+    { property: "og:image:alt", content: "Huldah Peter - Professional Videographer & Video Editor Portfolio" },
+    { property: "og:url", content: baseUrl },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
+    { name: "twitter:image", content: ogImage },
   ];
 }
 
